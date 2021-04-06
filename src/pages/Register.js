@@ -7,10 +7,13 @@ const Register = () => {
 
     const submit = async() => {
         Event.preventDefault();
-        const response = await fetch( input = 'http://localhost:8000/api/register', init = {
-            method = 'POST',
-            headers:{'Content-Type': 'application/json'},
-            body = JSON.stringify(value={
+        const response = await fetch('http://localhost:8000/api/register',  {
+            method : 'POST',
+            headers: { 
+              'Content-Type': 'application/json',
+              'Accepts': 'application/json',
+              },
+            body : JSON.stringify({
                 name,
                 email,
                 password
