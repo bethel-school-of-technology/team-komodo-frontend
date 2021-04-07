@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
     const [username, setUsername] = useState([]);
     const [password, setPassword] = useState([]);
     const [submitted, setSubmitted] = useState(false);
-
+    let history = useHistory();
     const submit = async (e) => {
         e.preventDefault();
         // console.log(username);
@@ -18,16 +19,28 @@ const Login = () => {
            
             body: JSON.stringify({ username, password }),
         };
-        console.log("loggin in")
+       
         return fetch('http://localhost:8080/login', requestOptions)
             .then(handleResponse)
             .then(user => {
+                console.log(user.headers.get("Authorization"));
+                console.log(user.headers.get("UserName"));
+
                 localStorage.setItem('user', user.headers.get("Authorization"));
                 localStorage.setItem('username', user.headers.get("UserName"));
                 return user;
-            })
-        
-        
+            }).then(
+                user => { 
+                    
+                    history.push("/");
+                    console.log("Logged in!"+user.toString())
+                    // window.location.reload();
+                },
+                error => {
+                    console.log("Erorr is: "+error.toString())
+                }
+            )
+
         
     }
 
@@ -48,7 +61,7 @@ const Login = () => {
                 return Promise.reject("Unauthorized");
             }
             // window.location.reload();
-            console.log(response)
+            console.log(response.headers)
             return response;
         });
     }
