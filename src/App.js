@@ -6,6 +6,8 @@ import Home from './components/Home';
 import Register from './components/Register';
 import Login from './components/Login';
 import Logout from './components/Logout';
+import Appointments from './components/Appointments';
+import MakeAppointment from './components/MakeAppointment';
 
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/logout" component={Logout} />
+          <Route path="/appointments" component={Appointments} />
+          <Route path="/makeappointment" component={MakeAppointment} />
 
         </main>
     </BrowserRouter>
