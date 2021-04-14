@@ -3,7 +3,8 @@ import React, { useState } from 'react'
 const Login = () => {
     const [username, setUsername] = useState([]);
     const [password, setPassword] = useState([]);
-    const [submitted, setSubmitted] = useState(false);
+   
+  
 
     const submit = async (e) => {
         e.preventDefault();
@@ -15,9 +16,10 @@ const Login = () => {
                 'Content-Type': 'application/json',
                 'Accepts': 'application/json',
                 },
-           
+            creditials: true,
             body: JSON.stringify({ username, password }),
         };
+        
         console.log("loggin in")
         return fetch('http://localhost:8080/login', requestOptions)
             .then(handleResponse)
@@ -27,9 +29,9 @@ const Login = () => {
                 return user;
             })
         
-        
-        
-    }
+    
+        };
+           
 
     function handleResponse(response) {
         return response.text().then(text => {
@@ -64,7 +66,8 @@ const Login = () => {
         <form onSubmit = {submit}>
         <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
        
-       <input name="username" value = {username} onChange= {onChangeUser} type="text" className="form-control" placeholder="Email address" required/>
+       <input name="username" value = {username} onChange= {onChangeUser} type="text" className="form-control" placeholder="Email address" required
+       />
 
        <input name="password" value={password} onChange= {onChangePW} type="password" className="form-control" placeholder="Password" required/>
        

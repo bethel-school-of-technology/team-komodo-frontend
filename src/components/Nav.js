@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 
 const Nav = () => {
     return (
-    <nav className="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-        <div className="container-fluid">
-            <Link to = "/" className="navbar-brand">Home</Link>
+        
+    <nav className="navbar">
+        <div className="navbar-container">
+            <Link to = "/" className="navbar-logo">
+                Home<i class="fas fa-paw"></i>
+            </Link>
    
          <div>
              <ul className="navbar-nav me-auto mb-2 mb-md-0">
@@ -19,6 +22,7 @@ const Nav = () => {
         </div>
         </div>
     </nav>
+    
     );
 };
 
