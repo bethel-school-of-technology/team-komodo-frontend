@@ -7,7 +7,7 @@ const Register = () => {
     const [password, setPassword] = useState([]);
     const [redirect, setRedirect] = useState(true);
     
-    };
+    
        
     const submit = async() => {
         Event.preventDefault();
@@ -50,6 +50,7 @@ const Register = () => {
        
        <button className="w-100 btn btn-lg btn-primary" type="submit">Register</button>
  </form>   
-    );
+    )
+  };
 
 export default Register;
