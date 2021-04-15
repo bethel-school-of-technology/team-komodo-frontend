@@ -51,11 +51,32 @@ const Nav = () => {
                 Home<i class="fas fa-paw"></i>
             </Link>
    
-         {navBarAuth()}
+
         </div>
+         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+          <li className='nav-item'>
+           <Link to ='/' className='nav-links' onClick={closeMobileMenu}> 
+             Home
+           </Link>
+           <Link to ='/login' className='nav-links' onClick={closeMobileMenu}> 
+             Login
+           </Link>
+            <Link to ='/sign-up' className='nav-links-mobile' onClick={closeMobileMenu}> 
+             Sign Up
+           </Link>
+            <Link to ='/locations' className='nav-links' onClick={closeMobileMenu}> 
+             Locations
+           </Link>
+          <Link to ='/about-us' className='nav-links' onClick={closeMobileMenu}> 
+             About Us
+           </Link>
+           <Link to ='/contact-us' className='nav-links' onClick={closeMobileMenu}> 
+             Contact Us
+           </Link>
+           </li>
+          </ul>
     </nav>
     
     );
 };
-
-export default Nav; 
+ export default Navbar
