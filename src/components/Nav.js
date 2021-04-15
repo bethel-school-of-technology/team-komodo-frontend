@@ -44,13 +44,17 @@ const Nav = () => {
         }
     }
     return (
-    <nav className="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-        <div className="container-fluid">
-            <Link to = "/" className="navbar-brand">Home</Link>
+        
+    <nav className="navbar">
+        <div className="navbar-container">
+            <Link to = "/" className="navbar-logo">
+                Home<i class="fas fa-paw"></i>
+            </Link>
    
          {navBarAuth()}
         </div>
     </nav>
+    
     );
 };
 
