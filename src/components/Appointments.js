@@ -44,22 +44,36 @@ const Appointments = (props) => {
       console.log(e);
 
       const appoints = e.map(
-        appoint => (
-          <li key={appoint.id} >{appoint.petName} {appoint.date} </li>
+        appoint => 
+        
+        (
+          <tr key={appoint.id} >
+            <th>{appoint.petName}</th>
+            <th>{ (new Date(appoint.date)).toLocaleDateString() }</th> 
+            <th>{appoint.species}</th>
+          </tr>
         )
       )
       console.log(appoints);
-      // for (let i = 0; i < appoints.length; i++) {
-      //   data.push(appoints[i]);
-      // }
+      
       return appoints;
     }
   }
   const newAppointment = AppointmentAlgo(list)
   return (
-    <ul>
-      {newAppointment}
-    </ul>
+    <div>
+      <table style={{width:'200%'}}>
+        <tbody>
+        <tr>
+          <th>Pet Name</th>
+          <th>Date</th>
+          <th>species</th>
+        </tr>
+        {newAppointment}
+        </tbody>
+      </table>
+    </div>
+    
   )
 
 }
