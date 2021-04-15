@@ -1,25 +1,48 @@
-import React from 'react';
-import {Link} from "react-router-dom";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-const Nav = () => {
-    return (
-    <nav className="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-        <div className="container-fluid">
-            <Link to = "/" className="navbar-brand">Home</Link>
-   
-         <div>
-             <ul className="navbar-nav me-auto mb-2 mb-md-0">
-               <li className="nav-item active">
-               <Link to = "/login" className="navbar-brand">Login</Link>
-             </li>
-             <li className="nav-item active">
-             <Link to = "/register" className="navbar-brand">Register</Link>
-            </li>
-             </ul>
+function Navbar(){
+ const [click, setClick] = useState(false);
+  
+ const handleClick = () => setClick(!click);
+ const closeMobileMenu = () => setClick(false); 
+  
+return (
+        
+    <nav className="navbar">
+        <div className="navbar-container">
+            <Link to = "/" className="navbar-logo">
+                IGVC<i class="fas fa-paw"></i>
+            </Link>
+            <div className='menu-icon' onCLick={handleClick}>
+              <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+            </div>
+         {/* {navBarAuth()} */}
         </div>
-        </div>
+         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+          <li className='nav-item'>
+           <Link to ='/' className='nav-links' onClick={closeMobileMenu}> 
+             Home
+           </Link>
+           <Link to ='/login' className='nav-links' onClick={closeMobileMenu}> 
+             Login
+           </Link>
+            <Link to ='/sign-up' className='nav-links-mobile' onClick={closeMobileMenu}> 
+             Sign Up
+           </Link>
+            <Link to ='/locations' className='nav-links' onClick={closeMobileMenu}> 
+             Locations
+           </Link>
+          <Link to ='/about-us' className='nav-links' onClick={closeMobileMenu}> 
+             About Us
+           </Link>
+           <Link to ='/contact-us' className='nav-links' onClick={closeMobileMenu}> 
+             Contact Us
+           </Link>
+           </li>
+          </ul>
     </nav>
+    
     );
 };
-
-export default Nav; 
+ export default Navbar
