@@ -46,10 +46,19 @@ const MakeAppointment = (props) => {
         'Content-Type': 'application/json',
         'Accepts': 'application/json',
         'Authorization': localStorage.getItem("user")
-      }
+      },
+      body: JSON.stringify({
+          petName,
+          species,
+          age,
+          description,
+          date,
+          slot,
+           
+        }),
     }
     const res = await fetch(`http://localhost:8080/api/${id}/appointment`, requestOptions);
-    const res2 = handleResponse(res)
+    const res2 = await handleResponse(res)
   }
   const getSlots = async () => {
     const requestOptions = {
@@ -62,7 +71,7 @@ const MakeAppointment = (props) => {
     }
     const res = await fetch(`http://localhost:8080/api/slots`, requestOptions);
     const stuff = await res.json();
-
+    console.log(stuff);
     return setLoadSlot(stuff);
   }
 
@@ -88,7 +97,18 @@ const MakeAppointment = (props) => {
     });
   }
   
-  const handleScheduled = () => {
+  const handleScheduled = (newdate) => {
+    
+    console.log(newdate)
+    setSlot(newdate.getHours());
+    setDate(newdate);
+    console.log(slot)
+    
+    if(slot == newdate.getHours() && date == newdate){
+      // submit();
+    }else{
+      console.log("something is wrong")
+    }
     
   };
   
@@ -102,7 +122,7 @@ const MakeAppointment = (props) => {
       if(slotdayObj.getFullYear() == slotTime.getFullYear() && 
          slotdayObj.getMonth() == slotTime.getMonth() &&
          slotdayObj.getDate() == slotTime.getDate()){
-          console.log(loadSlot);
+          // console.log(loadSlot);
           if(slotObj[i].slot_1){
             occupiedSlot_1 = new Date(slotTime.getFullYear(), slotTime.getMonth(), slotTime.getDate(),
               1,
@@ -131,14 +151,22 @@ const MakeAppointment = (props) => {
       
       }
     }
-    
+    const eveningTime = new Date(
+      slotTime.getFullYear(),
+      slotTime.getMonth(),
+      slotTime.getDate(),
+      10,
+      0,
+      0
+    );
   
     const isValid = slotTime.getTime() != occupiedSlot_1.getTime() &&
                     slotTime.getTime() != occupiedSlot_2.getTime() &&
-                    slotTime.getTime() != occupiedSlot_3.getTime()
+                    slotTime.getTime() != occupiedSlot_3.getTime() &&
+                    slotTime.getTime() < eveningTime.getTime(); 
                     
     
-    //  console.log(slotObj);
+     console.log(slotTime);
     // console.log(slotTime.getDate());
     return isValid;
   }
@@ -154,14 +182,13 @@ const MakeAppointment = (props) => {
         <input name="species" value = {species} onChange= {onChangeSpecies} type="text" className="form-control" placeholder="Species" required/>
         <input name="age" value = {age} onChange= {onChangeAge} type="text" className="form-control" placeholder="Age" required/>
         <input name="description" value = {description} onChange= {onChangeDescription} type="text" className="form-control" placeholder="Description" required/>
-        <input name="date" value = {date} onChange= {onChangeDate} type="text" className="form-control" placeholder="Date" required/>
         <DayTimePicker 
           timeSlotSizeMinutes={60}
           onConfirm={handleScheduled}
           timeSlotValidator={timeSlotValidator}
 
         />
-        <button className="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
+        {/* <button className="w-100 btn btn-lg btn-primary" type="submit">Submit</button> */}
       </form>
     </div>
     
