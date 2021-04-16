@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import moment from 'moment';
+
 import DayTimePicker from '@mooncake-dev/react-day-time-picker';
 /**
 * @author
