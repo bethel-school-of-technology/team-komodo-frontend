@@ -1,7 +1,6 @@
 import React from 'react';
 import Nav from './components/Nav';
 import './App.css';
-import { BrowserRouter, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Register from './components/Register';
 import Login from './components/Login';
@@ -9,13 +8,28 @@ import Logout from './components/Logout';
 import Appointments from './components/Appointments';
 import MakeAppointment from './components/MakeAppointment';
 import Geolocater from './components/Geolocater';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import AboutUs from './components/AboutUs';
+import ContactUs from './components/ContactUs';
+
 
 
 function App() {
   return (
     <div className="App">
-         <BrowserRouter>
+         <Router>
         <Nav/>
+        
+          <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/register" exact component={Register} />
+          <Route path="/locations" exact component={Home} />
+          <Route path="/geolocater" component={Geolocater} />
+          <Route path="/about-us" component={AboutUs} />
+          <Route path="/contact-us" component={ContactUs} />
+
+          </Switch>
       <main className="form-signin">
         
           <Route path="/" exact component={Home} />
@@ -27,7 +41,8 @@ function App() {
           <Route path="/geolocater" component={Geolocater} />
 
         </main>
-    </BrowserRouter>
+        
+    </Router>
  </div>
   );
 }
