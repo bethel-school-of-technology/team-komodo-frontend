@@ -16,7 +16,7 @@ const Login = () => {
                 'Content-Type': 'application/json',
                 'Accepts': 'application/json',
                 },
-           
+            creditials: true,
             body: JSON.stringify({ username, password }),
         };
        
