@@ -10,7 +10,7 @@ class Geolocater extends Component {
  state = {}
  render() {
   return(
-   <div>Geolocater</div>
+   <div>Geolocator</div>
     )
    }
  }

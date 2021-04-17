@@ -7,7 +7,7 @@ import Login from './components/Login';
 import Logout from './components/Logout';
 import Appointments from './components/Appointments';
 import MakeAppointment from './components/MakeAppointment';
-import Geolocater from './components/Geolocater';
+import Geolocator from './components/Geolocator';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import AboutUs from './components/AboutUs';
 import ContactUs from './components/ContactUs';
@@ -25,12 +25,15 @@ function App() {
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Register} />
           <Route path="/locations" exact component={Home} />
-          <Route path="/geolocater" component={Geolocater} />
+          <Route path="/geolocator" component={Geolocator} />
           <Route path="/about-us" component={AboutUs} />
           <Route path="/contact-us" component={ContactUs} />
+          <Route path="/logout" component={Logout} />
+          <Route path="/appointments" component={Appointments} />
+          <Route path="/makeappointment" component={MakeAppointment} />
 
           </Switch>
-      <main className="form-signin">
+      {/* <main className="form-signin">
         
           <Route path="/" exact component={Home} />
           <Route path="/login" component={Login} />
@@ -38,9 +41,11 @@ function App() {
           <Route path="/logout" component={Logout} />
           <Route path="/appointments" component={Appointments} />
           <Route path="/makeappointment" component={MakeAppointment} />
-          <Route path="/geolocater" component={Geolocater} />
+          <Route path="/geolocator" component={Geolocator} />
+          <Route path="/about-us" component={AboutUs} />
+          <Route path="/contact-us" component={ContactUs} />
 
-        </main>
+        </main> */}
         
     </Router>
  </div>
