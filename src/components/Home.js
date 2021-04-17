@@ -1,9 +1,13 @@
 import React from 'react';
+import '../App.css'
+import HeroSection from './HeroSection';
+import Cards from './Cards';
 
-const Home = () => {
+function Home () {
     return (
         <div>
-           Home
+           <HeroSection />
+           <Cards />
         </div>    
     );
 };
