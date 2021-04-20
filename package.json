@@ -14,7 +14,9 @@
     "react-scripts": "4.0.3",
     "react-timecalendar": "^2.0.1",
     "react-timeslot-calendar": "^0.2.0",
-    "web-vitals": "^1.1.1"
+    "web-vitals": "^1.1.1",
+    "mapbox-gl": "^2.2.0",
+    "worker-loader": "^3.0.7"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -26,8 +28,12 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+    "import/no-webpack-loader-syntax": "off"
+    }
   },
+  
   "browserslist": {
     "production": [
       ">0.2%",
