@@ -74,7 +74,7 @@ const Login = () => {
         setUsername(e.target.value)
     }
     return(
-        <form onSubmit = {submit}>
+        <form onSubmit = {submit} className="form-signin">
             <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
             
             <input name="username" value = {username} onChange= {onChangeUser} type="text" className="form-control" placeholder="Email address" required/>
