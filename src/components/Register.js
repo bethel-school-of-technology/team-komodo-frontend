@@ -1,43 +1,52 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router';
+import { useHistory } from "react-router-dom";
 
 const Register = () => {
-    const [name, setName] = useState( []);
+    const [email, setEmail] = useState( []);
     const [username, setUsername] = useState([]);
     const [password, setPassword] = useState([]);
     const [redirect, setRedirect] = useState(true);
-    
+    let history = useHistory();
     
        
-    const submit = async() => {
-        Event.preventDefault();
-        await fetch('http://localhost:8000/api/register',  {
+    const submit = async(e) => {
+        e.preventDefault();
+        return fetch('http://localhost:8080/api/user/register',  {
             method : 'POST',
             headers: { 
               'Content-Type': 'application/json',
               'Accepts': 'application/json',
               },
             body : JSON.stringify({
-                name,
+                email,
                 username,
                 password
             })
-        });
+        })
+        .then(
+          response =>{
+            if(response.status == 200){
+              history.push("/login");
+            }
+          }
+        ) 
+            
     
       }
       
       
-      if(redirect){
-        return <Redirect to = "/login"/>
+    //   if(redirect){
+    //     return <Redirect to = "/login"/>
     
-    }
+    // }
 
        return (
-        <form onSubmit ={submit}>
+        <form onSubmit ={submit} className="form-signin">
         <h1 className="h3 mb-3 fw-normal">Create an Account</h1>
 
-        <input type="name" className="form-control" placeholder="Name" required
-         onChange={e => setName (e.target.value)}
+        <input type="email" className="form-control" placeholder="Email" required
+         onChange={e => setEmail (e.target.value)}
          />
        
        <input type="username" className="form-control" placeholder="Username" required
