@@ -38,7 +38,7 @@ function Navbar() {
                 <li className="nav-item">
                     <Link to={"logout"} className='nav-links' onClick={closeMobileMenu}>Logout</Link>
                 </li>
-
+                
                 {/* <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Dropdown link
@@ -86,8 +86,9 @@ function Navbar() {
                                 Login
                             </Link>
                         </li>
+        
                         <li className='nav-item'>
-                            <Link to='/register' className='nav-links-mobile' onClick={closeMobileMenu}>
+                            <Link to='/register' className='nav-links' onClick={closeMobileMenu}>
                                 Sign Up
                             </Link>
                         </li>
