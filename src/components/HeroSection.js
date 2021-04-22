@@ -7,10 +7,10 @@ import './HeroSection.css';
 function HeroSection(){
     return(
         <div className='hero-container'>
-            <video src="/video-2.mp4" autoPlay loop muted />
+            <video src='/video-2.mp4' autoPlay loop muted />
             <h1>INTERGALACTIC VETERINARY CLINIC</h1>
             <p>Get your pet the care it needs with the love it deserves.</p>
-            <div className="hero-btns">
+            <div className='hero-btns'>
             <Button className='btns' buttonStyle='btn--outline'
             buttonSize='btn--large'
             >
