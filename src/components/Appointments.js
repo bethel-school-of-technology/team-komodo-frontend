@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { isCompositeComponent } from 'react-dom/test-utils';
+import { Table } from 'react-bootstrap';
 
 /**
 * @author
@@ -44,34 +45,43 @@ const Appointments = (props) => {
       console.log(e);
 
       const appoints = e.map(
-        appoint => 
+        (appoint,i) => 
         
         (
           <tr key={appoint.id} >
+            <th>{i+1}</th>
             <th>{appoint.petName}</th>
             <th>{ (new Date(appoint.date)).toLocaleDateString() }</th> 
             <th>{appoint.species}</th>
+            <th>{appoint.description}</th>
           </tr>
         )
       )
-      console.log(appoints);
+      console.log(appoints.id);
       
       return appoints;
     }
   }
   const newAppointment = AppointmentAlgo(list)
   return (
-    <div>
-      <table style={{width:'200%'}}>
+    <div className= "container justify-content-around">
+      <br/>
+      <h3>List of your Appointments :</h3>
+      
+      {/* <table style={{width:'50%'}} classNames="table"> */}
+      <Table striped bordered hover responsive size="sm">
         <tbody>
         <tr>
+          <th>#</th>
           <th>Pet Name</th>
           <th>Date</th>
-          <th>species</th>
+          <th>Species</th>
+          <th>Description</th>
         </tr>
         {newAppointment}
         </tbody>
-      </table>
+      {/* </table> */}
+      </Table>
     </div>
     
   )

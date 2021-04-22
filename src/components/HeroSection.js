@@ -5,6 +5,8 @@ import './HeroSection.css';
 
 
 function HeroSection(){
+    const login = 'login';
+    const adminlogin = 'adminlogin';
     return(
         <div className='hero-container'>
             <video src='/video-2.mp4' autoPlay loop muted />
@@ -12,12 +14,12 @@ function HeroSection(){
             <p>Get your pet the care it needs with the love it deserves.</p>
             <div className='hero-btns'>
             <Button className='btns' buttonStyle='btn--outline'
-            buttonSize='btn--large'
+            buttonSize='btn--large' link = {login}
             >
                 CHECK IN YOUR PET 
             </Button>
             <Button className='btns' buttonStyle='btn--primary'
-            buttonSize='btn--large'
+            buttonSize='btn--large' link = {adminlogin}
             >
             FIND LOCATION NEAR YOU <i className='fas fa-rocket' />
             </Button>
