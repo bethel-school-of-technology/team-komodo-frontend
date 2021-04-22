@@ -11,6 +11,7 @@ import Geolocator from './components/Geolocator';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import AboutUs from './components/AboutUs';
 import ContactUs from './components/ContactUs';
+import AdminLogin from './components/AdminLogin';
 
 
 
@@ -31,6 +32,7 @@ function App() {
           <Route path="/logout" component={Logout} />
           <Route path="/appointments" component={Appointments} />
           <Route path="/makeappointment" component={MakeAppointment} />
+          <Route path="/adminlogin" component={AdminLogin} />
 
           </Switch>
       {/* <main className="form-signin">
