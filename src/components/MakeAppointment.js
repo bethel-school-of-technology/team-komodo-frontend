@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useHistory } from "react-router-dom";
 
 import DayTimePicker from '@mooncake-dev/react-day-time-picker';
 /**
@@ -14,7 +15,7 @@ const MakeAppointment = (props) => {
   const[date, setDate] = useState(new Date());
   const[slot, setSlot] = useState("");
   const[loadSlot, setLoadSlot] = useState({});
-  
+  let history = useHistory();
   const onChangePetName = (e) =>{
     setPetName(e.target.value);
   }
@@ -57,8 +58,10 @@ const MakeAppointment = (props) => {
            
         }),
     }
-    const res = await fetch(`http://localhost:8080/api/${id}/appointment`, requestOptions);
-    const res2 = await handleResponse(res)
+    return fetch(`http://localhost:8080/api/${id}/appointment`, requestOptions)
+    .then(handleResponse)
+    .then(history.push('/'))
+    // const res2 = await 
   }
   const getSlots = async () => {
     const requestOptions = {
@@ -106,6 +109,8 @@ const MakeAppointment = (props) => {
     
     if(slot == newdate.getHours() && date == newdate){
       // submit();
+      console.log("Entered")
+      history.push('/')
     }else{
       console.log("something is wrong")
     }
@@ -173,13 +178,22 @@ const MakeAppointment = (props) => {
 
   return(
     
-    <div className= "container justify-content-around" >
+    <div className= "container justify-content-around" style={{width:'30%'}} >
       <form onSubmit = {submit}>
         <h1 className="h3 mb-3 fw-normal">Make an Appointment</h1>
         
         <input name="petName" value = {petName} onChange= {onChangePetName} type="text" className="form-control" placeholder="Pet's Name" required/>
 
-        <input name="species" value = {species} onChange= {onChangeSpecies} type="text" className="form-control" placeholder="Species" required/>
+        {/* <input name="species" value = {species} onChange= {onChangeSpecies} type="text" className="form-control" placeholder="Species" required/> */}
+        
+        <select name="species" value = {species} onChange= {onChangeSpecies} type="text" className="form-control" placeholder="Species" required>
+          <option defaultValue >--Please pick a species--</option>
+          <option value="Dog">Dog</option>
+          <option value="Cat">Cat</option>
+          <option value="Fish">Fish</option>
+        </select>
+        
+        
         <input name="age" value = {age} onChange= {onChangeAge} type="text" className="form-control" placeholder="Age" required/>
         <input name="description" value = {description} onChange= {onChangeDescription} type="text" className="form-control" placeholder="Description" required/>
         <DayTimePicker 
