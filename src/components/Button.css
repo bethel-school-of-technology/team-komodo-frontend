@@ -17,7 +17,7 @@ what i believed would look good! open to having you change it! lmk what you thin
 
 .btn--primary {
     background-color: var(--primary);
-    color: #131212;
+    color: #ffffff;
     border: 1px solid var(--primary);
 }
 
@@ -39,7 +39,8 @@ what i believed would look good! open to having you change it! lmk what you thin
     font-size: 20px;
 }
 
-.btn--medium:hover, .btn--large{
+.btn--medium:hover, 
+.btn--large{
     background: #fff;
     color: #131212;
     transition: all 0,3s ease-out;
