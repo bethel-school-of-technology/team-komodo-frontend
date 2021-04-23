@@ -159,7 +159,7 @@ function Navbar() {
                     
                     {button && <Button buttonStyle='btn--outline'>Check In Your Pet</Button>}
                 </ul> */}
-                {button && <Button buttonStyle='btn--outline'>Check In Your Pet</Button>}
+                {button && <Button buttonStyle='btn--outline'>Admin login</Button>}
             </div>
 
         </nav>

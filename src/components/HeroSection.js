@@ -6,7 +6,9 @@ import './HeroSection.css';
 
 function HeroSection(){
     const login = 'login';
-    const adminlogin = 'adminlogin';
+    // const adminlogin = 'adminlogin'; this code will be 
+    //attached to the admin login button in then nav menu
+    const geolocator = 'geolocator'
     return(
         <div className='hero-container'>
             <video src='/video-2.mp4' autoPlay loop muted />
@@ -19,7 +21,7 @@ function HeroSection(){
                 CHECK IN YOUR PET 
             </Button>
             <Button className='btns' buttonStyle='btn--primary'
-            buttonSize='btn--large' link = {adminlogin}
+            buttonSize='btn--large' link = {geolocator}
             >
             FIND LOCATION NEAR YOU <i className='fas fa-rocket' />
             </Button>

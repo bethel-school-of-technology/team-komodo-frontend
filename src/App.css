@@ -47,7 +47,6 @@
 .about-us,
 .contact-us,
 .register
-.location
 .sign-up {
   display: flex;
   height: 90vh;
@@ -84,10 +83,3 @@
 }
 
 
-.location {
-  background-position: center;
-  background-size: fill;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
-}
