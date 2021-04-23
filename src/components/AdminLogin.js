@@ -13,11 +13,16 @@ const AdminLogin = (props) => {
     const [password, setPassword] = useState();
     const submit = (e) =>{
         e.preventDefault();
+        console.log(username);
         if(username != "adminlogin"){
             console.log("wrong username");
         }
         if(password != "1234"){
             console.log("wrong password");
+        }
+        if(username == "adminlogin" && password == "1234"){
+            history.push("/admindashboard")
+            console.log("correct");
         }
 
     }
