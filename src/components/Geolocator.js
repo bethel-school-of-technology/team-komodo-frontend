@@ -56,7 +56,7 @@ class Geolocator extends React.PureComponent {
               'type': 'Feature',
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-100, 40]
+                'coordinates': [-100, 35]
               },
               'properties': {
                 'phoneFormatted': '(222) 222-2222',
@@ -123,10 +123,10 @@ class Geolocator extends React.PureComponent {
       return (
         <div>
           <div className="locationbar">
-              <h1>Locations:</h1>
-              <h2>For Cold Aliens</h2>
-              <h2>For Land Aliens</h2>
-              <h2>For Water Aliens</h2>
+              <h3>Locations:</h3>
+              <h4>For Land Aliens: North America</h4>
+              <h4>For Water Aliens: South Pacific Ocean</h4>
+              <h4>For Cold Aliens: Antarctica</h4>
             </div>
             <div className="sidebar">
               Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
