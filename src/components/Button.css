@@ -17,16 +17,16 @@ what i believed would look good! open to having you change it! lmk what you thin
 
 .btn--primary {
     background-color: var(--primary);
-    color: #ffffff;
+    color: #ffffff !important;
     border: 1px solid var(--primary);
 }
 
 .btn--outline {
-    background-color: transparent;
-    color: #fff;
-    padding: 8px 20px;
-    border: 1px solid var(--primary);
-    transition: all 0,3s ease-out;
+    background-color: transparent !important;
+    color: #fff !important;
+    padding: 8px 20px !important;
+    border: 1px solid var(--primary) !important;
+    transition: all 0,3s ease-out !important;
 }
 
 .btn--medium{
@@ -35,13 +35,13 @@ what i believed would look good! open to having you change it! lmk what you thin
 }
 
 .btn--large{
-    padding: 12px 26px;
-    font-size: 20px;
+    padding: 12px 26px !important;
+    font-size: 20px !important;
 }
 
 .btn--medium:hover, 
 .btn--large{
-    background: #fff;
-    color: #131212;
-    transition: all 0,3s ease-out;
+    background: #fff !important; 
+    color: #131212 !important;
+    transition: all 0,3s ease-out !important;
 }

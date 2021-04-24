@@ -11,7 +11,7 @@ function Cards() {
              <ul className='cards__items'>
                  <CardItem 
                  src='img-1.jpg'
-                 text= 'New land conquered means more expansion for The Intergalatic Veterinary Clinic. We are now servicing 300 Solor systems, 780 plants, and 32 galaxy. Check to see if there is a location near you. '
+                 text= 'New land conquered means more expansion for The Intergalatic Veterinary Clinic. We are now servicing 300 Solor systems, 780 plants, and 32 galaxies. Check to see if there is a location near you. '
                  lable='Locations'
                  path='/Geolocator'
                  />

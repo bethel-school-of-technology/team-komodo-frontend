@@ -2,6 +2,8 @@ import React from 'react';
 import '../App.css';
 import { Button } from './Button';
 import './HeroSection.css';
+import './Button.css'
+
 
 
 function HeroSection(){
@@ -11,9 +13,9 @@ function HeroSection(){
     const geolocator = 'geolocator'
     return(
         <div className='hero-container'>
-            <video src='/video-2.mp4' autoPlay loop muted />
+            <video src='/video-3.mp4' autoPlay loop muted />
             <h1>INTERGALACTIC VETERINARY CLINIC</h1>
-            <p>Get your pet the care it needs with the love it deserves.</p>
+            <p>Give your pet the care it needs with the love it deserves.</p>
             <div className='hero-btns'>
             <Button className='btns' buttonStyle='btn--outline'
             buttonSize='btn--large' link = {login}
