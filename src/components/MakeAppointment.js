@@ -188,14 +188,28 @@ const MakeAppointment = (props) => {
         
         <select name="species" value = {species} onChange= {onChangeSpecies} type="text" className="form-control" placeholder="Species" required>
           <option defaultValue >--Please pick a species--</option>
-          <option value="Dog">Dog</option>
+          <option value="Baby Snapping Turtle">Baby Snapping Turtle</option>
           <option value="Cat">Cat</option>
+          <option value="Crawdad">Crawdad</option>
+          <option value="Dog">Dog</option>
+          <option value="Ewok">Ewok</option>
           <option value="Fish">Fish</option>
+          <option value="Grass Carp">Grass Carp</option>
+          <option value="Green Sunfish">Green Sunfish</option>
+          <option value="Gungan">Gungan</option>
+          <option value="Muskrat">Muskrat</option>
+          <option value="Old Man Yoda">Old Man Yoda</option>
+          <option value="Porg">Porg</option>
+          <option value="Rancor">Rancor</option>
+          <option value="Tauntaun">Tauntaun</option>
+          <option value="Tiger">Tiger</option>
+          <option value="Velociraptor">Velociraptor</option>
+          
         </select>
         
         
         <input name="age" value = {age} onChange= {onChangeAge} type="text" className="form-control" placeholder="Age" required/>
-        <input name="description" value = {description} onChange= {onChangeDescription} type="text" className="form-control" placeholder="Description" required/>
+        <input name="description" value = {description} onChange= {onChangeDescription} type="text" className="form-control" placeholder="Description of Illness" required/>
         <DayTimePicker 
           timeSlotSizeMinutes={60}
           onConfirm={handleScheduled}
