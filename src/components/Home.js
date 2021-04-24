@@ -9,7 +9,7 @@ function Home () {
         <div>
            <HeroSection />
            <Cards />
-        </div>    
+         </div>    
     );
 };
 
