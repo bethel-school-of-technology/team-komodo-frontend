@@ -188,22 +188,39 @@ const MakeAppointment = (props) => {
         
         <select name="species" value = {species} onChange= {onChangeSpecies} type="text" className="form-control" placeholder="Species" required>
           <option defaultValue >--Please pick a species--</option>
+          <option value="Arachnid">Arachnid</option>
           <option value="Baby Snapping Turtle">Baby Snapping Turtle</option>
+          <option value="Bantha">Bantha</option>
+          <option value="Camel">Camel</option>
           <option value="Cat">Cat</option>
           <option value="Crawdad">Crawdad</option>
+          <option value="Dewback">Dewback</option>
           <option value="Dog">Dog</option>
           <option value="Ewok">Ewok</option>
           <option value="Fish">Fish</option>
+          <option value="Flerken">Flerken</option>
+          <option value="Frog">Frog</option>
+          <option value="Gooberfish">Gooberfish</option>
           <option value="Grass Carp">Grass Carp</option>
           <option value="Green Sunfish">Green Sunfish</option>
           <option value="Gungan">Gungan</option>
+          <option value="Houndeye">Houndeye</option>
+          <option value="Ichthyosaur">Ichthyosaur</option>
+          <option value="Jawa">Jawa</option>
+          <option value="Kaiju">Kaiju</option>
+          <option value="Mink">Mink</option>
           <option value="Muskrat">Muskrat</option>
           <option value="Old Man Yoda">Old Man Yoda</option>
+          <option value="Penguin">Penguin</option>
           <option value="Porg">Porg</option>
           <option value="Rancor">Rancor</option>
+          <option value="Skunk">Skunk</option>
           <option value="Tauntaun">Tauntaun</option>
           <option value="Tiger">Tiger</option>
           <option value="Velociraptor">Velociraptor</option>
+          <option value="Vortigaunt">Vortigaunt</option>
+          <option value="Wampa">Wampa</option>
+          <option value="Warg">Warg</option>
           
         </select>
         
