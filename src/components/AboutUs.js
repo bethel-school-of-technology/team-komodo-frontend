@@ -40,13 +40,13 @@ function AboutUs(){
         <div class="col-lg-4 col-sm-6">
           <div class="item"> <span class="icon feature_box_col_five"><i class="fab fa-galactic-republic"></i></span>
             <h6>Our Impact</h6>
-            <p>Our unique locations and vast amount of professionals have allowed us to reach creatures in some of the most inaccessible locations in the Galaxies. Providing care to all have created longer and healthier lifespans for our loved ones.</p>
+            <p>Our unique locations and vast amount of professionals have allowed us to reach creatures in some of the most inaccessible locations throughout the Galaxies. Providing care to all have created longer and healthier lifespans for our loved ones.</p>
           </div>
         </div>
         <div class="col-lg-4 col-sm-6">
           <div class="item"> <span class="icon feature_box_col_six"><i class="fas fa-dragon"></i></span>
             <h6>Our Clients</h6>
-            <p>We are the only Veterinarian clinc in the Universe that accepts all admitted creatures. We do not discriminate based on species, age, location, or origin of birth. We accept all and any cliental and follow the Code of the Galactic Peace Treaty. </p>
+            <p>We are the only Veterinarian clinic in the Universe that accepts all admitted creatures. We do not discriminate based on species, age, location, or origin of birth. We accept all and any clientele and follow the Code of the Galactic Peace Treaty. </p>
           </div>
         </div>
       </div>
