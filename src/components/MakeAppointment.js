@@ -60,7 +60,7 @@ const MakeAppointment = (props) => {
     }
     return fetch(`http://localhost:8080/api/${id}/appointment`, requestOptions)
     .then(handleResponse)
-    .then(history.push('/'))
+    .then(history.push('/appointments'))
     // const res2 = await 
   }
   const getSlots = async () => {
